@@ -1,3 +1,6 @@
+import React from "react";
+import ReactDOM  from "react-dom/client";
+
 {/* <div id="parent">
     <div id="child1">
     <h1> Iam a h1 tag</h1>
