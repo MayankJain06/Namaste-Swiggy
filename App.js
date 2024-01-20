@@ -27,6 +27,7 @@ import ReactDOM  from "react-dom/client";
             Namaste React using JSX 🚀</h1>
             );
 
+            // React Functionalcomponent
 
     const HeadComponent = ()=>(
         <div id="container">
