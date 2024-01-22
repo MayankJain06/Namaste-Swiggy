@@ -21,6 +21,18 @@ import ReactDOM  from "react-dom/client";
 
 
     // const HeadingComponent = ()=> <h1>Namaste React Fucntional Component</h1>
+    // Component Composition
+
+
+    //Header
+       Logo  
+    // Body
+    // Footer
+
+
+
+
+    
 
     const Title =()=> (
          <h1 className="head" tabIndex={5}>
