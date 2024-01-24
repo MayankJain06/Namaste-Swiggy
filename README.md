@@ -23,4 +23,39 @@ Namaste React Live Course from Zero to Hero 🚀 by Akshay Saini Founder of Nama
 - Different dev and prod bundles
 
 
+# Namaste Food 
+
+/**
+    * Header
+        - Logo 
+        - Nav Items
+    * Body
+        - Search 
+        - RestaurantContainer
+         - Restaurant Card 
+         - Img
+         - Name of the Res, Star Rating, cuisine, Delivery Time
+
+
+    * Footer
+        - Copyright
+        - Links
+        - Address
+        - Contact 
+    **/
+
+
+
+// Two types of Export/Import
+
+- Default Export/Import
+ 
+ export default Component;
+ import Component from "path";
+
+- Named Export/Import
+
+ export const component;
+ import {component} from "path";
+
 
