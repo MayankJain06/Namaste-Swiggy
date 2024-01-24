@@ -42,7 +42,7 @@ Namaste React Live Course from Zero to Hero 🚀 by Akshay Saini Founder of Nama
         - Links
         - Address
         - Contact 
-    **/
+**/
 
 
 
@@ -59,3 +59,11 @@ Namaste React Live Course from Zero to Hero 🚀 by Akshay Saini Founder of Nama
  import {component} from "path";
 
 
+# React Hooks
+
+(Normal JS utility functions)
+
+- useState() - Super powerful State variable
+
+// Whenever a sate variable updates React re-renders the Component
+- useEffect()
