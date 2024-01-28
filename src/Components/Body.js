@@ -1,11 +1,12 @@
 import RestaurantCard from "./RestaurantCard"
 import { useEffect, useState } from "react";
-import restaurantList from "../utils/mockData";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
 
     // Local State variable -Super Powerful variable
     const [listOfRestaurants, setlistofRestaurants] = useState([]);
+    const [searchText, setsearchText] = useState("");
 
         useEffect(()=>{
             fetchData();
@@ -16,15 +17,22 @@ const Body = () => {
         const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.4853202&lng=78.4453532&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
         const jsondata = await data.json();
         console.log(jsondata);
-        setlistofRestaurants(jsondata.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
+        // Optional Chaining
+        setlistofRestaurants(jsondata?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
       };
 
-      if(listOfRestaurants.length===0){
-        return <div>Loading...</div>
-      }
-    return (
+  //Condtional Rendering
+    return listOfRestaurants.length === 0 ? ( <Shimmer /> ) : (
         <div className="body">
             <div className="filter">
+              <div className="search">
+                <input type="text" className="search-box" placeholder="Search for an Restaurant" value={searchText} onChange={(e)=>setsearchText(e.target.value)}/>
+                <button className="search-btn" onClick={()=>{
+                  // Filter the restaurant card and update the UI
+                  // searchText 
+                  console.log(searchText);
+                }}>Search</button>
+              </div>
                 <button className="filter-btn" onClick={()=>{
                    // Filtering Logic
                    const filteredRestaurants = listOfRestaurants.filter(res=>res.info.avgRating>=4);
