@@ -6,8 +6,11 @@ const Body = () => {
 
     // Local State variable -Super Powerful variable
     const [listOfRestaurants, setlistofRestaurants] = useState([]);
+    const [filteredRestaurants,setFilteredRestaurants] =useState([]);
     const [searchText, setsearchText] = useState("");
 
+    // Whenever state variable update react triggers reconciliation cycle( re-renders the component)
+    console.log("Body rendered");
         useEffect(()=>{
             fetchData();
 
@@ -19,6 +22,7 @@ const Body = () => {
         console.log(jsondata);
         // Optional Chaining
         setlistofRestaurants(jsondata?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setFilteredRestaurants(jsondata?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
       };
 
   //Condtional Rendering
@@ -31,6 +35,12 @@ const Body = () => {
                   // Filter the restaurant card and update the UI
                   // searchText 
                   console.log(searchText);
+
+                  const filteredRestaurants = listOfRestaurants.filter((res)=>{
+                   return res.info.name.toLowerCase().includes(searchText);
+                  });
+
+                  setFilteredRestaurants(filteredRestaurants);
                 }}>Search</button>
               </div>
                 <button className="filter-btn" onClick={()=>{
@@ -40,7 +50,7 @@ const Body = () => {
                 }}>Top Rated Restaurants</button>
             </div>
             <div className="res-container">
-            {listOfRestaurants.map((restaurant)=> 
+            {filteredRestaurants.map((restaurant)=> 
               <RestaurantCard key={restaurant.info.id}  resData ={restaurant} />
               )}
             </div>
