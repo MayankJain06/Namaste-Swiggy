@@ -13,7 +13,6 @@ const Body = () => {
     console.log("Body rendered");
         useEffect(()=>{
             fetchData();
-
         }, []);
 
       const fetchData= async () =>{
@@ -37,7 +36,7 @@ const Body = () => {
                   console.log(searchText);
 
                   const filteredRestaurants = listOfRestaurants.filter((res)=>{
-                   return res.info.name.toLowerCase().includes(searchText);
+                   return res.info.name.toLowerCase().includes(searchText.toLowerCase());
                   });
 
                   setFilteredRestaurants(filteredRestaurants);
