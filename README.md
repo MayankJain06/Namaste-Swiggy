@@ -45,6 +45,7 @@ Namaste React Live Course from Zero to Hero 🚀 by Akshay Saini Founder of Nama
 **/
 
 
+ # Exports/Imports
 
 // Two types of Export/Import
 
@@ -67,3 +68,7 @@ Namaste React Live Course from Zero to Hero 🚀 by Akshay Saini Founder of Nama
 
 // Whenever a sate variable updates React re-renders the Component
 - useEffect()
+
+# 2 types of Routing in web-apps
+- Client side Routing
+- Server side Routing
