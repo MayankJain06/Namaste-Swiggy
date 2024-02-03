@@ -1,0 +1,6 @@
+{
+    "workbench.settings.useSplitJSON": true,
+    "terminal.integrated.commandsToSkipShell": [
+        "\"css.lint.unknownAtRules\": \"ignore\""
+    ]
+}
