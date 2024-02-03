@@ -37,7 +37,6 @@ class UserClass extends React.Component {
         console.log(this.props.name +"Child rendered Called");
 
         const {name, location, avatar_url} = this.state.userInfo;
-        debugger;
         return (
             <div className="user-card">
                 <img src={avatar_url}></img>
