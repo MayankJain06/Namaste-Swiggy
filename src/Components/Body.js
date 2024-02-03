@@ -22,8 +22,8 @@ const Body = () => {
         const jsondata = await data.json();
         console.log(jsondata);
         // Optional Chaining
-        setlistofRestaurants(jsondata?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        setFilteredRestaurants(jsondata?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setlistofRestaurants(JSON.parse(JSON.stringify(jsondata?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)));
+        setFilteredRestaurants(JSON.parse(JSON.stringify(jsondata?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)));
       };
 
 
@@ -51,7 +51,7 @@ const Body = () => {
                 <button className="filter-btn" onClick={()=>{
                    // Filtering Logic
                    const filteredRestaurants = listOfRestaurants.filter(res=>res.info.avgRating>=4);
-                   setlistofRestaurants(filteredRestaurants);
+                   setFilteredRestaurants(filteredRestaurants);
                 }}>Top Rated Restaurants</button>
             </div>
             <div className="res-container">
