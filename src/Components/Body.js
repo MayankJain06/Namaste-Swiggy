@@ -22,8 +22,8 @@ const Body = () => {
         const jsondata = await data.json();
         console.log(jsondata);
         // Optional Chaining
-        setlistofRestaurants(jsondata?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        setFilteredRestaurants(jsondata?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setlistofRestaurants(JSON.parse(JSON.stringify(jsondata?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)));
+        setFilteredRestaurants(JSON.parse(JSON.stringify(jsondata?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)));
       };
 
 
@@ -52,10 +52,8 @@ const Body = () => {
               <button className="py-2 px-4 m-4 bg-gray-100 rounded-lg" onClick={()=>{
                    // Filtering Logic
                    const filteredRestaurants = listOfRestaurants.filter(res=>res.info.avgRating>=4);
-                   console.log(filteredRestaurants);
                    setlistofRestaurants(filteredRestaurants);
                 }}>Top Rated Restaurants</button>
-              </div>
             </div>
             <div className="flex flex-wrap">
             {filteredRestaurants.map((restaurant)=>  (
