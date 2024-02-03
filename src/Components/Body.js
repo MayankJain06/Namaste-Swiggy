@@ -23,7 +23,7 @@ const Body = () => {
         console.log(jsondata);
         // Optional Chaining
        setlistofRestaurants(JSON.parse(JSON.stringify(jsondata?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)));
-        setFilteredRestaurants(JSON.parse(JSON.stringify(jsondata?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)));
+      setFilteredRestaurants(JSON.parse(JSON.stringify(jsondata?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)));
       };
 
 
