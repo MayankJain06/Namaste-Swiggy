@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard"
+import RestaurantCard ,{withPromotedLabel}from "./RestaurantCard"
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -10,6 +10,10 @@ const Body = () => {
     const [listOfRestaurants, setlistofRestaurants] = useState([]);
     const [filteredRestaurants,setFilteredRestaurants] =useState([]);
     const [searchText, setsearchText] = useState("");
+
+    console.log(listOfRestaurants);
+    
+    const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 
     // Whenever state variable update react triggers reconciliation cycle( re-renders the component)
     console.log("Body rendered");
@@ -60,7 +64,8 @@ const Body = () => {
             <div className="flex flex-wrap">
             {filteredRestaurants.map((restaurant)=>  (
             <Link key={restaurant.info.id} to={"/restaurants/" + restaurant.info.id}> 
-            <RestaurantCard resData ={restaurant} /> 
+             { restaurant.data.promoted ? (
+              <RestaurantCardPromoted resData ={restaurant}/> ):( <RestaurantCard resData ={restaurant}/> ) }
             </Link>
               ))}
             </div>
