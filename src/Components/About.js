@@ -2,6 +2,7 @@ import User from "./User";
 import React from "react";
 import UserClass from "./UserClass";
 
+// Class Component
 
 class About extends React.Component {
 
