@@ -13,24 +13,24 @@ class UserClass extends React.Component {
             }
         }
 
-        console.log( this.props.name +"Child constructor Called");
+      //  console.log( this.props.name +"Child constructor Called");
     }
    async componentDidMount(){
-        console.log(this.props.name +"Child Component Did Mount");
+       // console.log(this.props.name +"Child Component Did Mount");
         const data = await fetch("https://api.github.com/users/MayankJain06");
         const json = await data.json();
         this.setState({
             userInfo : json,
         })
-        console.log(json);
+     //   console.log(json);
     }
 
     componentDidUpdate(){
-        console.log("Component Did Update");
+      //  console.log("Component Did Update");
     }
 
     componentWillUnmount(){
-        console.log("Component Will Unamount");
+      //  console.log("Component Will Unamount");
     }
 
     render() {
