@@ -1,6 +1,10 @@
 import { CDN_URL } from '../utils/constants';
 
 const ItemList = ({items}) =>{
+
+    const handleItem = ()=>{
+        // Dispatch the action
+    }
     return (
         <div>
            { items.map((item) => (
@@ -16,7 +20,8 @@ const ItemList = ({items}) =>{
 
                 <div className="w-3/12 p-4">
                     <div className="absolute"> 
-                    <button className="p-2 mx-16 rounded-lg bg-white shadow-lg m-auto">Add +</button>
+                    <button className="p-2 mx-16 rounded-lg bg-white shadow-lg m-auto"
+                    onClick={handleItem}>Add +</button>
                     </div>
                 <img src={CDN_URL + item.card.info.imageId} className="w-full"></img>
                 </div>

@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 export const Header = ()=>{
     const[btnNameReact, setbtnNameReact] = useState("Login");
@@ -13,6 +14,9 @@ export const Header = ()=>{
     const { loggedInUser } =useContext(UserContext);
     console.log(loggedInUser);
 
+    // Subscribing to the Store using a selector
+    const cartItems = useSelector((store)=> store.cart.items);
+    console.log(cartItems);
     // if no dependency array => useEffect is called on every render
     // if dependency array is empty => useEffect is called on initial render(just once)
     // if dependency array is [btnNameReact] => called every when btnNameReact is updated
@@ -31,7 +35,7 @@ export const Header = ()=>{
                 <li className="px-4"><Link to="/about">About Us</Link></li>
                 <li className="px-4"><Link to="/contact">Contact</Link></li>
                 <li className="px-4"><Link to="/grocery">Grocery</Link></li>
-                <li className="px-4">Cart</li>
+                <li className="px-4 font-bold text-xl">Cart-({cartItems.length} items)</li>
                 <button className="login" onClick={()=>{ 
                     btnNameReact ==="Login" ? setbtnNameReact("Logout") :setbtnNameReact("Login"); 
             }}
@@ -40,7 +44,6 @@ export const Header = ()=>{
                 <li className="px-4">{loggedInUser}</li>
             </ul>
         </div>
-
         </div>
     )
 }

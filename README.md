@@ -72,3 +72,13 @@ Namaste React Live Course from Zero to Hero 🚀 by Akshay Saini Founder of Nama
 # 2 types of Routing in web-apps
 - Client side Routing
 - Server side Routing
+
+
+# Redux Toolkit
+- Install @reduxjs/Toolkit and react-redux
+- Build our store 
+- Connect our store to our app
+- Create a cart slice
+- Dispatch an Action 
+- Read the data to the Selector
+
