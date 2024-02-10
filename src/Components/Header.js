@@ -11,8 +11,7 @@ export const Header = ()=>{
     const onlineStatus = useOnlineStatus();
 
     const { loggedInUser } =useContext(UserContext);
-    console.log(loggedInUser
-);
+    console.log(loggedInUser);
 
     // if no dependency array => useEffect is called on every render
     // if dependency array is empty => useEffect is called on initial render(just once)

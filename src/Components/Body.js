@@ -1,8 +1,10 @@
 import RestaurantCard ,{withPromotedLabel}from "./RestaurantCard"
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from '../utils/useOnlineStatus';
+import UserContext from "../utils/UserContext";
+
 
 const Body = () => {
 
@@ -15,6 +17,8 @@ const Body = () => {
     
     const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 
+    const { loggedInUser ,setUserName } =useContext(UserContext);
+
     // Whenever state variable update react triggers reconciliation cycle( re-renders the component)
     console.log("Body rendered");
         useEffect(()=>{
@@ -26,7 +30,7 @@ const Body = () => {
         const jsondata = await data.json();
         console.log(jsondata);
         // Optional Chaining
-       setlistofRestaurants(JSON.parse(JSON.stringify(jsondata?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)));
+      setlistofRestaurants(JSON.parse(JSON.stringify(jsondata?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)));
       setFilteredRestaurants(JSON.parse(JSON.stringify(jsondata?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)));
       };
 
@@ -59,6 +63,13 @@ const Body = () => {
                    console.log(filteredRestaurants);
                    setFilteredRestaurants(filteredRestaurants);
                 }}>Top Rated Restaurants</button>
+              </div>
+              <div className="search m-4 p-4 flex items-center">
+                <label>UserName : </label>
+              <input 
+              className="border border-black p-2" 
+              onChange={(e)=> setUserName(e.target.value)}
+              value={loggedInUser}></input>
               </div>
             </div>
             <div className="flex flex-wrap">

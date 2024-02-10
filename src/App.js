@@ -23,11 +23,9 @@ import UserContext from "./utils/UserContext";
         },[]);
 
         return (
-            <UserContext.Provider value={{loggedInUser : userName}}>
+            <UserContext.Provider value={{loggedInUser : userName, setUserName}}>
             <div className="app">
-            <UserContext.Provider value={{loggedInUser : "Elon Mask"}}>
                 <Header />
-                </UserContext.Provider>
                 <Outlet />
             </div>
             </UserContext.Provider>

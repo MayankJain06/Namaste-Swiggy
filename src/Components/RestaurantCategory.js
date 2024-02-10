@@ -12,7 +12,7 @@ return (
             <span>▼</span>
             </div>
             
-           { showItems &&<ItemList items={data.itemCards}></ItemList>} 
+           { showItems && <ItemList items={data.itemCards}></ItemList>} 
         </div>
         
     </div>
