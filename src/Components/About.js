@@ -1,4 +1,3 @@
-import User from "./User";
 import React from "react";
 import UserClass from "./UserClass";
 import UserContext from "../utils/UserContext";

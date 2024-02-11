@@ -9,6 +9,7 @@ import RestaurantMenu from "./Components/RestaurantMenu";
 import UserContext from "./utils/UserContext";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
+import Cart from "./Components/Cart";
 
     const Grocery= lazy(()=> import("./Components/Grocery"));
     const About= lazy(()=> import("./Components/About"));
@@ -58,7 +59,12 @@ import appStore from "./utils/appStore";
             {
                 path: "/restaurants/:resId",
                 element : <RestaurantMenu />
-            }],
+            },
+            {
+                path: "/Cart",
+                element : <Cart />
+            },
+        ],
             errorElement : <Error />
         },
     ])
