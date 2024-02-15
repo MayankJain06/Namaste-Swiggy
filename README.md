@@ -82,3 +82,15 @@ Namaste React Live Course from Zero to Hero 🚀 by Akshay Saini Founder of Nama
 - Dispatch an Action 
 - Read the data to the Selector
 
+# Types of testing (developer)
+
+- Unit Testing
+- Integration Testing
+- E2E or End to End testing
+
+# Setting up testing in our app
+- Install React Testing Library
+- Installed Jest
+- Install Babel Dependencies
+- Configure Babel
+- Configure Parcel Config file to disable default babel transpilation 
