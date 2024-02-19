@@ -94,3 +94,8 @@ Namaste React Live Course from Zero to Hero 🚀 by Akshay Saini Founder of Nama
 - Install Babel Dependencies
 - Configure Babel
 - Configure Parcel Config file to disable default babel transpilation 
+- Jest Configuration -- npx jest --init
+- Install JS Do library
+- Install  @babel/preset-react - to make JSX work in test cases
+- Include  @babel/preset-react inside babel config
+- Install npm i -D @testing-library/jest-dom
