@@ -4,6 +4,7 @@ import "@testing-library/jest-dom";
 
 
 describe("Contact Us Page Test Case",()=>{
+    // we can either write test or it 
     test("Should load contact us component", ()=>{
         render(<Contact/>);
     
@@ -11,28 +12,28 @@ describe("Contact Us Page Test Case",()=>{
         expect(heading).toBeInTheDocument();
     });
     
-    test("Should load button inside Contact component", ()=>{
+    it("Should load button inside Contact component", ()=>{
         render(<Contact/>);
     
         const button =screen.getByRole("button");
         expect(button).toBeInTheDocument();
     });
     
-    test("Should load contact us component", ()=>{
+    it("Should load contact us component", ()=>{
         render(<Contact/>);
     
         const button =screen.getByText("Submit");
         expect(button).toBeInTheDocument();
     });
     
-    test("Should load input name inside contact Component", ()=>{
+    it("Should load input name inside contact Component", ()=>{
         render(<Contact/>);
     
         const input =screen.getByPlaceholderText("Name");
         expect(input).toBeInTheDocument();
     });
     
-    test("Should load 2 input text boxes inside contact Component", ()=>{
+    it("Should load 2 input text boxes inside contact Component", ()=>{
         render(<Contact/>);
     
         //Querying
