@@ -2,6 +2,7 @@ import {React, lazy,Suspense, useEffect, useState } from "react";
 import ReactDOM  from "react-dom/client";
 import Header  from "./Components/Header";
 import Body from "./Components/Body";
+import Footer from "./Components/Footer";
 import Contact from "./Components/Contact";
 import Error from "./Components/Error";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
@@ -31,6 +32,7 @@ import Cart from "./Components/Cart";
             <div className="app">
                 <Header />
                 <Outlet />
+                {/* <Footer /> */}
             </div>
             </UserContext.Provider>
             </Provider>

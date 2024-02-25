@@ -26,7 +26,7 @@ const RestaurantCard = (props)=>{
             <h4>{avgRating} stars</h4>
             <h4>{costForTwo}</h4>
             <h4>{sla?.slaString}</h4>
-            <h4>{loggedInUser}</h4>
+            {/* <h4>{loggedInUser}</h4> */}
         </div>
     );
 };
