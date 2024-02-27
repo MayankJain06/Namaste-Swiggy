@@ -2,7 +2,7 @@ const { render, screen } = require("@testing-library/react")
 import Contact from "../Contact";
 import "@testing-library/jest-dom";
 
-
+//test cases
 describe("Contact Us Page Test Case",()=>{
     // we can either write test or it 
     test("Should load contact us component", ()=>{
